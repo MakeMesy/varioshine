@@ -23,8 +23,8 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
 
     <!-- hero section -->
     <section class="hero_sectio_main">
-        <swiper-container class="mySwiper" navigation="true" loop="true" keyboard="true" mousewheel="true" pagination="true">
-            <swiper-slide class="slide_1">
+        <swiper-container class="mySwiper heroSwiper" navigation="true" loop="true" keyboard="true" mousewheel="true" pagination="true">
+            <swiper-slide class="slide_1 hero_slider">
                 <div class="flex px-20 justify-between items-center ">
                     <div class="slider_img">
                         <img src="./assets/img/products/3-in-1 Car Polish.webp" alt="">
@@ -46,8 +46,8 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
                     </div>
                 </div>
             </swiper-slide>
-            <swiper-slide>Slide 2</swiper-slide>
-            <swiper-slide>Slide 3</swiper-slide>
+            <swiper-slide class="hero_slider">Slide 2</swiper-slide>
+            <swiper-slide class="hero_slider">Slide 3</swiper-slide>
 
         </swiper-container>
     </section>
@@ -212,15 +212,205 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
     <!-- our products -->
      <section id="our_products">
 <div class="our_products">
-    <div class="our_products_head">
-        <h2>
+    <div class="our_products_head mb-10">
+        <h2 class="text-center text-4xl uppercase">
             Our Products
         </h2>
+    </div>
+    <div class="products_lists">
+    <swiper-container class="mySwiper products_swiper" navigation=true loop=true slides-per-view="3"
+    space-between="30" free-mode="true">
+    <swiper-slide class="product_swiper">
+        <div class="product_swiper_img">
+            <img src="./assets/img/products/Air Freshener.webp" alt="">
+        </div>
+        <div class="product_swiper_con">
+            <h2 class="product_main_head">
+            Car Air Freshener
+            </h2>
+            <h3 class="product_sec_head">
+            Natural, long-lasting car freshener with soothing aroma.
+            </h3>
+            <div class="price_product">
+                <h2>
+                ₹299
+                </h2>
+                <button>
+                    Buy now
+                </button>
+            </div>
+
+        </div>
+    </swiper-slide>
+    <swiper-slide class="product_swiper">
+        <div class="product_swiper_img">
+            <img src="./assets/img/products/Air Freshener.webp" alt="">
+        </div>
+        <div class="product_swiper_con">
+            <h2 class="product_main_head">
+            Car Air Freshener
+            </h2>
+            <h3 class="product_sec_head">
+            Natural, long-lasting car freshener with soothing aroma.
+            </h3>
+            <div class="price_product">
+                <h2>
+                ₹299
+                </h2>
+                <button>
+                    Buy now
+                </button>
+            </div>
+
+        </div>
+    </swiper-slide>
+    <swiper-slide class="product_swiper">
+        <div class="product_swiper_img">
+            <img src="./assets/img/products/Air Freshener.webp" alt="">
+        </div>
+        <div class="product_swiper_con">
+            <h2 class="product_main_head">
+            Car Air Freshener
+            </h2>
+            <h3 class="product_sec_head">
+            Natural, long-lasting car freshener with soothing aroma.
+            </h3>
+            <div class="price_product">
+                <h2>
+                ₹299
+                </h2>
+                <button>
+                    Buy now
+                </button>
+            </div>
+
+        </div>
+    </swiper-slide>
+    <swiper-slide class="product_swiper">
+        <div class="product_swiper_img">
+            <img src="./assets/img/products/Air Freshener.webp" alt="">
+        </div>
+        <div class="product_swiper_con">
+            <h2 class="product_main_head">
+            Car Air Freshener
+            </h2>
+            <h3 class="product_sec_head">
+            Natural, long-lasting car freshener with soothing aroma.
+            </h3>
+            <div class="price_product">
+                <h2>
+                ₹299
+                </h2>
+                <button>
+                    Buy now
+                </button>
+            </div>
+
+        </div>
+    </swiper-slide>
+  </swiper-container>
     </div>
 </div>
      </section>
 
+     <!-- feedback -->
+      <section id="feedback_section_main">
+<div class="feedback_section">
+    <div class="feedback_slide">
+        <h2 class="feedback_heading">
+        Real Reviews. Real Results
+        </h2>
 
+        <swiper-container class="mySwiper feedback_swiper"  space-between="20"
+    slides-per-view="3">
+    <swiper-slide class="feedback_container">
+        <div class="feedback_person_name">
+            <h2>
+                B.Naveen Bharathi
+            </h2>
+        </div>
+        <div class="feedback_product_name">
+            <p>
+                3 in 1 polish
+            </p>
+        </div>
+        <div class="feedback_content">
+            <p>
+                Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur 
+            </p>
+        </div>
+    </swiper-slide>
+    <swiper-slide class="feedback_container">
+        <div class="feedback_person_name">
+            <h2>
+                B.Naveen Bharathi
+            </h2>
+        </div>
+        <div class="feedback_product_name">
+            <p>
+                3 in 1 polish
+            </p>
+        </div>
+        <div class="feedback_content">
+            <p>
+                Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur 
+            </p>
+        </div>
+    </swiper-slide>
+    <swiper-slide class="feedback_container">
+        <div class="feedback_person_name">
+            <h2>
+                B.Naveen Bharathi
+            </h2>
+        </div>
+        <div class="feedback_product_name">
+            <p>
+                3 in 1 polish
+            </p>
+        </div>
+        <div class="feedback_content">
+            <p>
+                Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur 
+            </p>
+        </div>
+    </swiper-slide>
+    <swiper-slide class="feedback_container">
+        <div class="feedback_person_name">
+            <h2>
+                B.Naveen Bharathi
+            </h2>
+        </div>
+        <div class="feedback_product_name">
+            <p>
+                3 in 1 polish
+            </p>
+        </div>
+        <div class="feedback_content">
+            <p>
+                Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur 
+            </p>
+        </div>
+    </swiper-slide>
+
+    
+  </swiper-container>
+
+    </div>
+    <div class="feedback_input">
+           <div class="feedback_icon">
+           <i class="fa-solid fa-comments"></i>
+           </div>
+               <button>
+                Give Feedback
+               </button>
+    </div>
+</div>
+      </section>
+      
+<div class="instagram_feed">
+<iframe src="https://www.juicer.io/api/feeds/varioshine/iframe" class="" frameborder="0" width="1200" height="500" style="margin:5rem auto;"></iframe>
+
+</div>
     <!-- footer -->
     <?php include("./resource/footer.php"); ?>
 

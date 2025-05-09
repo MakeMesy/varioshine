@@ -11,12 +11,20 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
 
 <head>
     <?php include("./resource/head.php"); ?>
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/resource/style.css">
 </head>
 
 <body>
 
 <!-- navbar -->
 <?php include("./resource/navbar.php"); ?>
+
+
+
+<!-- footer -->
+<?php include("./resource/footer.php"); ?>
+
 
 
 </body>

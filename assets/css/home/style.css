@@ -2,24 +2,23 @@
 
 /* hero section */
 
-.mySwiper {
+.heroSwiper {
     height: 85vh;
 }
 
-swiper-slide {
+.hero_slider {
     position: relative;
     width: 100%;
     background: url('../../img/home/slider_1.webp') no-repeat center/cover;
-
     z-index: -1;
 }
 
-swiper-slide:nth-child(1)::before {
+.hero_slider:nth-child(1)::before {
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #121212a0;
+    background: #12121279;
     z-index: -1;
 }
 
@@ -30,11 +29,11 @@ swiper-slide:nth-child(1)::before {
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.8));
 }
 
-swiper-slide img {
+.hero_slider img {
     transition: 0.4s;
 }
 
-swiper-slide:hover img {
+.hero_slider:hover img {
     transform: scale(1.04);
 }
 
@@ -321,8 +320,7 @@ right: 10px;
 transition: 0.4s;
 border-radius: 3px;
 box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-padding: 2
-px;
+padding: 2px;
 border: 2px solid var(--dark-primary);
 }
 .why_section_img img:hover{
@@ -335,4 +333,160 @@ border: 2px solid var(--dark-primary);
 }
 .why_point_item:hover{
     transform: scale(1.03);
+}
+
+
+/* products */
+
+.our_products{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.our_products_head h2{
+    color: var(--primary-color);
+    letter-spacing: 1.9px;
+    font-weight: 800;
+}
+.products_swiper{
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+}
+.product_swiper{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 500px;
+border-radius: 4px;
+overflow: hidden;
+border: 2px solid var(--dark-primary);
+}
+.product_swiper img{
+    transition: 0.3s;
+}
+.product_swiper:hover img{
+    transform: scale(1.02);
+}
+.product_swiper img{
+    width: 120px;
+}
+.product_swiper_img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--dark-primary);
+}
+.product_swiper_con{
+    padding: 20px;
+}
+.product_main_head{
+    text-align: center;
+    font-size: clamp(22px,2vw,25px);
+    margin-bottom: 10px;
+}
+.product_sec_head{
+    font-size: clamp(15px,1.5vw,18px);
+    text-align: center;
+}
+.price_product{
+display: flex;
+padding: 10px;
+align-items: center;
+margin-top: 10px;
+justify-content: space-around;
+}
+.price_product button{
+    background: var(--accent-color);
+    padding: 8px 12px;
+    color: var(--text-color);
+    border-radius: 3px;
+    text-transform: uppercase;
+
+}
+.price_product h2{
+    font-size: clamp(22px,2vw,25px);
+}
+
+
+/* feedback */
+.feedback_section_main{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.feedback_section{
+    padding: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+align-items: center;
+gap: 2rem;
+}
+.feedback_container{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--light-primary);
+    border: 1px solid var(--dark-primary);
+    padding: 20px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+}
+.feedback_content p{
+    width: 100%;
+    text-align: justify;
+    margin-top: 1rem;
+    color: var(--dark-primary);
+
+}
+.feedback_swiper{
+    max-width: 980px;
+}
+.feedback_heading{
+    margin-bottom: 2rem;
+    font-size: clamp(23px,3vw,38px);
+    font-weight: 800;
+    color: var(--dark-primary);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.feedback_person_name h2{
+    text-align: center;
+    font-size: clamp(18px,2vw,22px);
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+.feedback_product_name {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: clamp(16px,2vw,20px);
+
+}
+.feedback_input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+align-items: center;
+}
+.feedback_input button{
+    font-size: clamp(22px,3vw,24px);
+    color: var(--text-color);
+    background: var(--primary-color);
+  border-radius: 4px;
+  transition: 0.4s;
+  padding: 8px 15px;
+  text-transform: uppercase;
+  box-shadow: 2px 4px 3px rgba(0, 0, 0, 0.4);
+}
+.feedback_input button:hover{
+    color: var(--primary-color);
+    background: var(--dark-primary);
+}
+.feedback_icon {
+font-size: 2rem;
+margin-bottom: 1rem;
+color: var(--dark-primary);
 }
