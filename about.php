@@ -13,6 +13,7 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
     <?php include("./resource/head.php"); ?>
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/resource/style.css">
+    <link rel="stylesheet" href="./assets/css/about/style.css">
 </head>
 
 <body>
@@ -20,8 +21,114 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
 <!-- navbar -->
 <?php include("./resource/navbar.php"); ?>
 
+<section class="hero_section_banner" style="background: url('./assets/img/hero_section/about.webp') no-repeat center/cover">
+   <h2>
+    About
+   </h2>
+</section>
+
+<section id="about_section_main">
+    <h2 class="about_section_heading">
+        About Us
+    </h2>
+      <div class="about_section">
+        <div class="about_points">
+        <ul>
+            <li>
+            <div>
+    <h3>Premium Vehicle Care Solutions</h3>
+    <p>Varioshine offers high-performance cleaning, polishing, and protection products for both cars and bikes, trusted by professionals and enthusiasts alike.</p>
+  </div>
 
 
+
+            </li>
+            <li>
+                
+  <div>
+    <h3>Growing Brand with a Purpose</h3>
+    <p>Varioshine is rapidly expanding across India, known for its quality, consistency, and eco-conscious formulations.</p>
+  </div>
+            </li>
+            <li>
+            <div>
+    <h3>Built on Passion & Expertise</h3>
+    <p>Born from a love for well-maintained vehicles, our products are crafted for visible results and effortless use.</p>
+  </div>
+            </li>
+        </ul>
+
+        </div>
+        <div class="about_img">
+            <img src="./assets/img/about/image_2.webp" alt="">
+        </div>
+      </div>
+</section>
+
+<!-- goals -->
+ <section class="goals_section_main">
+    <div class="goals_section flex ">
+        <div class="vision box-section">
+         <h2>
+         vision
+         </h2>
+         <ul>
+            <li>
+            Lead the Car Care Industry in India
+            </li>
+            <li>
+            Raise the Standards of Quality and Safety
+            </li>
+            <li>
+            Expand Nationally and Globally
+            </li>
+            <li>
+            Inspire a Cleaner Future
+            </li>
+         </ul>
+        </div>
+        <div class="mission box-section">
+            <h2>
+            Mission
+            </h2>
+            <ul>
+                <li>
+                Deliver High-Performance Products
+                </li>
+                <li>
+                Simplify Vehicle Care
+                </li>
+                <li>
+                Innovate with Eco-Conscious Formulas
+                </li>
+                <li>
+                Build Lasting Relationships with Customers
+                </li>
+            </ul>
+        </div>
+    </div>
+ </section>
+
+
+<section class="quality_assurance_main">
+  <h3>Sustainability & Quality Assurance</h3>
+
+<div class="quality_assurance">
+
+<section>
+  <ul>
+    <li>Formulated with eco-friendly, biodegradable ingredients.</li>
+    <li>Free from harsh chemicals to protect you and the environment.</li>
+    <li>Each product undergoes strict quality control and testing.</li>
+    <li>Packaging designed with recyclability and minimal waste in mind.</li>
+    <li>Committed to consistent performance and long-term vehicle care.</li>
+  </ul>
+</section>
+<section class="quality_img">
+    <img src="./assets/img/about/image_3.png" alt="">
+</section>
+</div>
+</section>
 <!-- footer -->
 <?php include("./resource/footer.php"); ?>
 

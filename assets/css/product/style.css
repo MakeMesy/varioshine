@@ -1,0 +1,111 @@
+@import url(../main.css);
+
+
+.main_product_section{
+
+ margin-bottom: 5rem;
+ display: flex;
+margin: 2rem auto;
+max-width: 1400px;
+width: 100%;
+ justify-content: center;
+}
+.product_images{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+
+}
+.product_images div {
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid var(--dark-primary);
+
+}
+.product_images div img{
+  width: 40px;
+    object-fit: cover;
+  border-radius: 5px;
+}
+.product_img {
+    width: 100%;
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+}
+.product_img  img{
+    width: 200px;
+    object-fit: cover;
+}
+.product_content{
+    flex-basis: 100%;
+}
+.product_heading h2{
+margin-bottom: 2rem;
+font-size: clamp(23px,3vw,28px);
+color: var(--dark-primary);
+}
+.product_price  {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  color: var(--dark-primary);
+  font-size: clamp(18px,2vw,22px);
+}
+.product_price  h2:nth-child(1){
+    font-size: clamp(22px,3vw,38px);
+    color: var(--primary-color);
+}
+.product_price   h2 span{
+text-decoration: line-through;
+}
+.buy_btn {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.buy_btn button{
+    background: var(--primary-color);
+    padding: 8px 15px;
+    color: var(--dark-primary);
+    font-size: clamp(20px,2vw,24px);
+    border-radius: 3px;
+    text-transform: uppercase;
+     transition: 0.4s;
+     position: relative;
+}
+.buy_btn button:hover{
+    transform: scale(1.03);
+}
+.buy_btn button:hover span{
+    color: var(--text-color);
+    z-index: 1;
+    
+}
+.buy_btn button::before{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 0%;
+    top: 0;
+    left: 0;
+    background: var(--dark-primary);
+    height: 100%;
+    transition: 0.4s;
+    border-radius: 4px;
+}
+.buy_btn button:hover::before{
+    width: 100%;
+
+}
+.about_item ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.about_item ul strong{
+    color: var(--primary-color);
+}
