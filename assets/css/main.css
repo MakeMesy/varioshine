@@ -44,6 +44,10 @@ body {
   line-height: 1.5;
   font-family: "Cal Sans", sans-serif;
   letter-spacing: 1px;
+  overflow-x: hidden;
+}
+html{
+  overflow-x: hidden;
 }
 
 /* Set shorter line heights on headings and interactive elements */

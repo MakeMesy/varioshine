@@ -23,7 +23,7 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
 
     <!-- hero section -->
     <section class="hero_sectio_main">
-        <swiper-container class="mySwiper heroSwiper" navigation="true" loop="true" keyboard="true" mousewheel="true" pagination="true">
+        <swiper-container class="mySwiper heroSwiper" navigation="true" loop="true" keyboard="true"  pagination="true">
             <swiper-slide class="slide_1 hero_slider">
                 <div class="flex px-20 justify-between items-center ">
                     <div class="slider_img">

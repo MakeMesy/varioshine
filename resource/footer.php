@@ -86,4 +86,12 @@
                 </div>
         </div>
     </div>
+    <div class="copy_right">
+    <p >
+    &copy; 2025 <a href="https://www.varioshine.in">Varioshine.</a> All rights reserved. | Designed & Developed by 
+    <a href="https://makemesy.in" target="_blank" >
+      Makemesy
+    </a>
+  </p>
+    </div>
 </footer>
