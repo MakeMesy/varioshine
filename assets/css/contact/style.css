@@ -149,4 +149,7 @@ textarea{
     .contact-card{
         width: 280px;
     }
+    .contact-form-section,.form-group-1{
+        flex-direction: column;
+    }
 }
