@@ -23,8 +23,7 @@
                 </h2>
                 </div>
                 <div class="offer_line_content">
-                Get 
-                Flat <span>20%
+                Get Flat <span>20%
                 </span>
                 </div>
             

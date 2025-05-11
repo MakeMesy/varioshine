@@ -465,6 +465,32 @@ swiper-container::part(button-prev):hover {
         height: 580px;
       }
 }
+@media screen and (max-width:400px) {
+     .offer_img img {
+        width: 200px;
+        margin-top: 7rem;
+      }
+      .banner_logo img {
+        width: 120px;
+      }
+      .banner_product_img img {
+        width: 100px;
+
+      }
+     
+      .bg_img img {
+        height: 630px;
+      }
+      .offer_deal_btn button {
+        margin-right: 5rem;
+      }
+      .bottom_banner_text{
+margin-top: 1rem;
+      }
+      .offer_line_content {
+        margin-left: 10rem;
+      }
+}
 /* responsive */
 @media screen and (max-width: 640px) {
     .main_footer {
@@ -487,6 +513,7 @@ swiper-container::part(button-prev):hover {
     .mobile_main_items.active {
         transform: translateY(0);
         opacity: 1;
+        pointer-events: all;
       }
 
       .products_swiper {

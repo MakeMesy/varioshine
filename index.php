@@ -278,16 +278,13 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
 
 
     <script>
-  const swiperEl = document.querySelector('.feedback_swiper');
-  Object.assign(swiperEl, {
+  const swiperEl2 = document.querySelector('.feedback_swiper');
+  Object.assign(swiperEl2, {
     spaceBetween: 20,
     slidesPerView: 3,
     breakpoints: {
       0: {
         slidesPerView: 1
-      },
-      520:{
-        slidesPerView:2
       },
       768: {
         slidesPerView: 3
