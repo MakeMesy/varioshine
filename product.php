@@ -55,7 +55,11 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
             </button>
         </div>
         <div class="about_item">
-        <ul>
+          
+        <h2 class="text-2xl uppercase ">
+          About Item
+        </h2>
+        <ul class="mt-5">
     <li>
       <strong>Crystal-Clear Shine, No Streaks:</strong>
       <p>

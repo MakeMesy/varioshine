@@ -44,6 +44,10 @@ width: 100%;
 .product_content{
     flex-basis: 100%;
 }
+.about_item h2{
+    color: var(--dark-primary);
+    font-weight: 800;
+}
 .product_heading h2{
 margin-bottom: 2rem;
 font-size: clamp(23px,3vw,28px);
@@ -108,4 +112,21 @@ text-decoration: line-through;
 }
 .about_item ul strong{
     color: var(--primary-color);
+}
+
+
+@media screen and (max-width:768px) {
+    .main_product_section{
+        flex-direction: column;
+    }
+    .product_content{
+        padding: 2rem;
+    }
+    .product_heading h2{
+        text-align: justify;
+    }
+    .product_images{
+        flex-direction: row;
+        justify-content: center;
+    }
 }

@@ -126,3 +126,14 @@ margin-bottom: 4rem;
     font-size: clamp(16px,2vw,20px);
     text-align: justify;
 }
+
+@media screen and (max-width:768px) {
+    .about_section,.goals_section,.quality_assurance {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .quality_assurance{
+        flex-direction: column-reverse;
+    }
+}

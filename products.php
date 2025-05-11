@@ -29,20 +29,20 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
 
 
 
-<section id="our_products">
-<div class="our_products">
-    <div class="our_products_head mb-10">
+<section id="our_products_page">
+<div class="our_products_page">
+    <div class="our_products_page_head mb-10">
         <h2 class="text-center text-4xl uppercase">
            our top  Products
         </h2>
     </div>
-    <div class="products_lists">
-    <div class="products_swiper" >
-    <div class="product_swiper">
-        <div class="product_swiper_img">
+    <div class="products_lists_page">
+    <div class="products_swiper_page" >
+    <div class="product_swiper_page">
+        <div class="product_swiper_page_img">
             <img src="./assets/img/products/Air Freshener.webp" alt="">
         </div>
-        <div class="product_swiper_con">
+        <div class="product_swiper_page_con">
             <h2 class="product_main_head">
             Car Air Freshener
             </h2>
@@ -60,11 +60,11 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
 
         </div>
     </div>
-    <div class="product_swiper">
-        <div class="product_swiper_img">
+    <div class="product_swiper_page">
+        <div class="product_swiper_page_img">
             <img src="./assets/img/products/Air Freshener.webp" alt="">
         </div>
-        <div class="product_swiper_con">
+        <div class="product_swiper_page_con">
             <h2 class="product_main_head">
             Car Air Freshener
             </h2>
@@ -82,11 +82,11 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
 
         </div>
     </div>
-    <div class="product_swiper">
-        <div class="product_swiper_img">
+    <div class="product_swiper_page">
+        <div class="product_swiper_page_img">
             <img src="./assets/img/products/Air Freshener.webp" alt="">
         </div>
-        <div class="product_swiper_con">
+        <div class="product_swiper_page_con">
             <h2 class="product_main_head">
             Car Air Freshener
             </h2>
@@ -104,11 +104,11 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
 
         </div>
     </div>
-    <div class="product_swiper">
-        <div class="product_swiper_img">
+    <div class="product_swiper_page">
+        <div class="product_swiper_page_img">
             <img src="./assets/img/products/Air Freshener.webp" alt="">
         </div>
-        <div class="product_swiper_con">
+        <div class="product_swiper_page_con">
             <h2 class="product_main_head">
             Car Air Freshener
             </h2>
@@ -126,11 +126,11 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
 
         </div>
     </div>
-    <div class="product_swiper">
-        <div class="product_swiper_img">
+    <div class="product_swiper_page">
+        <div class="product_swiper_page_img">
             <img src="./assets/img/products/Air Freshener.webp" alt="">
         </div>
-        <div class="product_swiper_con">
+        <div class="product_swiper_page_con">
             <h2 class="product_main_head">
             Car Air Freshener
             </h2>
@@ -148,11 +148,11 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
 
         </div>
     </div>
-    <div class="product_swiper">
-        <div class="product_swiper_img">
+    <div class="product_swiper_page">
+        <div class="product_swiper_page_img">
             <img src="./assets/img/products/Air Freshener.webp" alt="">
         </div>
-        <div class="product_swiper_con">
+        <div class="product_swiper_page_con">
             <h2 class="product_main_head">
             Car Air Freshener
             </h2>

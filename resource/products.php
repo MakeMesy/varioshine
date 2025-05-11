@@ -7,7 +7,7 @@
     </div>
     <div class="products_lists">
     <swiper-container class="mySwiper products_swiper" navigation=true loop=true slides-per-view="3"
-    space-between="30" free-mode="true">
+    space-between="30" >
     <swiper-slide class="product_swiper">
         <div class="product_swiper_img">
             <img src="./assets/img/products/Air Freshener.webp" alt="">
@@ -100,3 +100,24 @@
     </div>
 </div>
      </section>
+
+
+     <script>
+  const swiperEl = document.querySelector('.products_swiper');
+  Object.assign(swiperEl, {
+    spaceBetween: 20,
+    slidesPerView: 3,
+    breakpoints: {
+      0: {
+        slidesPerView: 1
+      },
+      520:{
+        slidesPerView:2
+      },
+      768: {
+        slidesPerView: 3
+      }
+    }
+  });
+  swiperEl.initialize();
+</script>
