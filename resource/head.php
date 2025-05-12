@@ -10,3 +10,7 @@
 <link rel="shortcut icon" href="<?php echo htmlspecialchars($Icon_Image); ?>" type="image/x-icon">
 <!-- font awesome -->
 <script src="https://kit.fontawesome.com/181ea7bd20.js" crossorigin="anonymous"></script>
+
+<!-- aos animation -->
+   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+   

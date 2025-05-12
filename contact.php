@@ -31,7 +31,7 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
 
 <div id="contact-cards">
   <div class="contact-cards">
-    <div class="contact-card-1 contact-card">
+    <div class="contact-card-1 contact-card" data-aos="fade-right">
      <div class="contact-card-title">
      <i class="fa-solid fa-envelope"></i>
      <h2>
@@ -45,7 +45,7 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
      </div>
     </div>
 
-    <div class="contact-card-2 contact-card">
+    <div class="contact-card-2 contact-card" data-aos="fade-up">
      <div class="contact-card-title">
      <i class="fa-solid fa-phone"></i>
      <h2>
@@ -59,7 +59,7 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
      </div>
     </div>
 
-    <div class="contact-card-1 contact-card">
+    <div class="contact-card-1 contact-card" data-aos="fade-left">
      <div class="contact-card-title">
      <i class="fa-solid fa-map-location-dot"></i>
      <h2>

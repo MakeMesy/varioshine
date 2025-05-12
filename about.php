@@ -34,7 +34,7 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
       <div class="about_section">
         <div class="about_points">
         <ul>
-            <li>
+            <li data-aos="fade-right">
             <div>
     <h3>Premium Vehicle Care Solutions</h3>
     <p>Varioshine offers high-performance cleaning, polishing, and protection products for both cars and bikes, trusted by professionals and enthusiasts alike.</p>
@@ -43,14 +43,14 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
 
 
             </li>
-            <li>
+            <li data-aos="fade-left">
                 
   <div>
     <h3>Growing Brand with a Purpose</h3>
     <p>Varioshine is rapidly expanding across India, known for its quality, consistency, and eco-conscious formulations.</p>
   </div>
             </li>
-            <li>
+            <li data-aos="fade-right">
             <div>
     <h3>Built on Passion & Expertise</h3>
     <p>Born from a love for well-maintained vehicles, our products are crafted for visible results and effortless use.</p>
@@ -59,7 +59,7 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
         </ul>
 
         </div>
-        <div class="about_img">
+        <div class="about_img" data-aos="zoom-in">
             <img src="./assets/img/about/image_2.webp" alt="">
         </div>
       </div>
@@ -68,7 +68,7 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
 <!-- goals -->
  <section class="goals_section_main">
     <div class="goals_section flex ">
-        <div class="vision box-section">
+        <div class="vision box-section" data-aos="fade-up-right">
          <h2>
          vision
          </h2>
@@ -87,7 +87,7 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
             </li>
          </ul>
         </div>
-        <div class="mission box-section">
+        <div class="mission box-section" data-aos="fade-down-left">
             <h2>
             Mission
             </h2>
@@ -113,18 +113,18 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
 <section class="quality_assurance_main">
   <h3>Sustainability & Quality Assurance</h3>
 
-<div class="quality_assurance">
+<div class="quality_assurance" >
 
 <section>
   <ul>
-    <li>Formulated with eco-friendly, biodegradable ingredients.</li>
-    <li>Free from harsh chemicals to protect you and the environment.</li>
-    <li>Each product undergoes strict quality control and testing.</li>
-    <li>Packaging designed with recyclability and minimal waste in mind.</li>
-    <li>Committed to consistent performance and long-term vehicle care.</li>
+    <li data-aos="fade-left">Formulated with eco-friendly, biodegradable ingredients.</li>
+    <li data-aos="fade-right">Free from harsh chemicals to protect you and the environment.</li>
+    <li data-aos="fade-left">Each product undergoes strict quality control and testing.</li>
+    <li data-aos="fade-right">Packaging designed with recyclability and minimal waste in mind.</li>
+    <li data-aos="fade-left">Committed to consistent performance and long-term vehicle care.</li>
   </ul>
 </section>
-<section class="quality_img">
+<section class="quality_img" data-aos="fade-right">
     <img src="./assets/img/about/image_3.png" alt="">
 </section>
 </div>

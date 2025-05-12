@@ -37,14 +37,14 @@ function safe_htmlspecialchars($value)
             <swiper-slide class="slide_1 hero_slider" style="background: url('./assets/img/home/<?= safe_htmlspecialchars($hero_section['img']); ?>') no-repeat center/cover;">
                 <div class=" hero_slider_main ">
                     <div class="hero_slider_content ">
-                        <h2 class="">
+                        <h2 class="" data-aos="fade-right">
                            <?= safe_htmlspecialchars($hero_section['heading']); ?>
                         </h2>
-                        <p class="">
+                        <p class="" data-aos="fade-left" >
                              <?= safe_htmlspecialchars($hero_section['slogan']); ?>
                         </p>
                         <a href="<?= safe_htmlspecialchars($hero_section['link']); ?>" class="">
-                            <button>
+                            <button data-aos="fade-up">
                                 <span>
                                      <?= safe_htmlspecialchars($hero_section['btn']); ?>
                                 </span>
@@ -61,7 +61,7 @@ function safe_htmlspecialchars($value)
 
     <!-- featured products -->
     <section id="featured_products " class="mt-20">
-        <div class="section_head_text text-4xl uppercase text-center">
+        <div class="section_head_text text-4xl uppercase text-center" data-aos="fade-down">
             <h2>
                 featured products
             </h2>
@@ -128,43 +128,43 @@ function safe_htmlspecialchars($value)
     <!-- why section -->
     <section id="why_section">
         <div class=" mx-auto px-4 why_section_main">
-            <h2 class="text-4xl font-bold text-center head_text_why">Why Choose Varioshine?</h2>
+            <h2 class="text-4xl font-bold text-center head_text_why" data-aos="fade-up">Why Choose Varioshine?</h2>
             <div class="flex why_section_content gap-20 items-center">
                 <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center why_containers">
 
-                    <div class="p-6 bg-white shadow-md rounded-lg why_point_item">
+                    <div class="p-6 bg-white shadow-md rounded-lg why_point_item" data-aos="fade-down-right"> 
                         <i class="fas fa-flask text-4xl text-blue-600 mb-4"></i>
                         <h3 class="text-xl font-semibold">Premium-Grade Formulas</h3>
                     </div>
 
-                    <div class="p-6 bg-white shadow-md rounded-lg why_point_item">
+                    <div class="p-6 bg-white shadow-md rounded-lg why_point_item"  data-aos="fade-down">
                         <i class="fas fa-sun text-4xl text-yellow-500 mb-4"></i>
                         <h3 class="text-xl font-semibold">Long-Lasting Shine</h3>
                     </div>
 
-                    <div class="p-6 bg-white shadow-md rounded-lg why_point_item">
+                    <div class="p-6 bg-white shadow-md rounded-lg why_point_item"  data-aos="fade-down-left">
                         <i class="fas fa-leaf text-4xl text-green-500 mb-4"></i>
                         <h3 class="text-xl font-semibold">Chemical-Free & Safe</h3>
                     </div>
 
-                    <div class="p-6 bg-white shadow-md rounded-lg why_point_item">
+                    <div class="p-6 bg-white shadow-md rounded-lg why_point_item"  data-aos="fade-up-right">
                         <i class="fas fa-tools text-4xl text-gray-700 mb-4"></i>
                         <h3 class="text-xl font-semibold">Multipurpose Use</h3>
                     </div>
 
-                    <div class="p-6 bg-white shadow-md rounded-lg why_point_item">
+                    <div class="p-6 bg-white shadow-md rounded-lg why_point_item" data-aos="fade-up">
                         <i class="fas fa-flag text-4xl text-red-600 mb-4"></i>
                         <h3 class="text-xl font-semibold">Proudly Made in India</h3>
                     </div>
 
-                    <div class="p-6 bg-white shadow-md rounded-lg why_point_item">
+                    <div class="p-6 bg-white shadow-md rounded-lg why_point_item" data-aos="fade-up-left">
                         <i class="fas fa-user-check text-4xl text-indigo-600 mb-4"></i>
                         <h3 class="text-xl font-semibold">Trusted by Experts</h3>
                     </div>
 
                 </div>
 
-                <div class="why_section_img">
+                <div class="why_section_img" data-aos="zoom-in">
                     <img src="./assets/img/home/about_point.webp" alt="">
                 </div>
             </div>
@@ -181,7 +181,7 @@ function safe_htmlspecialchars($value)
     <section id="feedback_section_main">
         <div class="feedback_section">
             <div class="feedback_slide">
-                <h2 class="feedback_heading">
+                <h2 class="feedback_heading"  data-aos="fade-up-left">
                     Real Reviews. Real Results
                 </h2>
 
@@ -260,7 +260,7 @@ function safe_htmlspecialchars($value)
                 </swiper-container>
 
             </div>
-            <div class="feedback_input">
+            <div class="feedback_input"  data-aos="zoom-in-up">
                 <div class="feedback_icon">
                     <i class="fa-solid fa-comments"></i>
                 </div>

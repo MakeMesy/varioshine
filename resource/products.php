@@ -1,7 +1,7 @@
 <section id="our_products">
 <div class="our_products">
     <div class="our_products_head mb-10">
-        <h2 class="text-center text-4xl uppercase">
+        <h2 class="text-center text-4xl uppercase"  data-aos="zoom-in-up">
             Our Products
         </h2>
     </div>

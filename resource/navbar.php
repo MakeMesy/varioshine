@@ -1,5 +1,5 @@
-<nav>
-    <div class="main_navbar flex justify-between px-20 items-center pt-3">
+<nav >
+    <div class="main_navbar flex justify-between px-20 items-center pt-3" data-aos="fade-down">
         <div class="nav_img">
             <img src="./assets/img/main/varioshine_long.webp" alt="">
         </div>

@@ -1,8 +1,35 @@
 <?php
-$page_title = "VarioShine";
+$page_title = "Products | Varioshine";
 $page_description = "";
 $page_url = "https://www.varioshine.in/";
 $Icon_Image = "./assets/img/main/main_icon.webp";
+
+include('./resource/conn.php');
+
+$product_query = "SELECT id,short_name,sec_head,image,offer_price,amazon_link FROM products";
+$stmt = $conn->prepare($product_query);
+$stmt->execute();
+
+$stmt->bind_result($id,$short_name,$sec_head,$image,$offer_price,$amazon_link);
+
+$products = [];
+while ($stmt->fetch()) {
+  $products[] = [
+    'id'=>$id,
+    'short_name' => $short_name,
+    'image' => $image,
+    'sec_head'=>$sec_head,
+    'offer_price'=>$offer_price,
+    'amazon_link'=>$amazon_link
+  ];
+}
+
+
+$stmt->close();
+function safe_htmlspecialchars($value)
+{
+    return htmlspecialchars($value !== null ? $value : '-', ENT_QUOTES, 'UTF-8');
+}
 ?>
 
 
@@ -32,144 +59,40 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
 <section id="our_products_page">
 <div class="our_products_page">
     <div class="our_products_page_head mb-10">
-        <h2 class="text-center text-4xl uppercase">
+        <h2 class="text-center text-4xl uppercase" data-aos="zoom-in-up">
            our top  Products
         </h2>
     </div>
     <div class="products_lists_page">
     <div class="products_swiper_page" >
-    <div class="product_swiper_page">
+ <?php foreach ($products as $product): ?>
+    <div class="product_swiper_page " data-aos="zoom-in">
         <div class="product_swiper_page_img">
-            <img src="./assets/img/products/Air Freshener.webp" alt="">
+            <img src="./assets/img/products/<?= safe_htmlspecialchars($product['image']) ?>" alt="">
         </div>
         <div class="product_swiper_page_con">
             <h2 class="product_main_head">
-            Car Air Freshener
+            <?= safe_htmlspecialchars($product['short_name']) ?>
             </h2>
             <h3 class="product_sec_head">
-            Natural, long-lasting car freshener with soothing aroma.
+            <?= safe_htmlspecialchars($product['sec_head']) ?>
+
             </h3>
             <div class="price_product">
                 <h2>
-                ₹299
+                ₹<?= safe_htmlspecialchars($product['offer_price']) ?>
                 </h2>
-                <button>
+                <a href="<?= safe_htmlspecialchars($product['amazon_link']) ?>">
+                  <button>
                     Buy now
                 </button>
+                </a>
             </div>
 
         </div>
     </div>
-    <div class="product_swiper_page">
-        <div class="product_swiper_page_img">
-            <img src="./assets/img/products/Air Freshener.webp" alt="">
-        </div>
-        <div class="product_swiper_page_con">
-            <h2 class="product_main_head">
-            Car Air Freshener
-            </h2>
-            <h3 class="product_sec_head">
-            Natural, long-lasting car freshener with soothing aroma.
-            </h3>
-            <div class="price_product">
-                <h2>
-                ₹299
-                </h2>
-                <button>
-                    Buy now
-                </button>
-            </div>
 
-        </div>
-    </div>
-    <div class="product_swiper_page">
-        <div class="product_swiper_page_img">
-            <img src="./assets/img/products/Air Freshener.webp" alt="">
-        </div>
-        <div class="product_swiper_page_con">
-            <h2 class="product_main_head">
-            Car Air Freshener
-            </h2>
-            <h3 class="product_sec_head">
-            Natural, long-lasting car freshener with soothing aroma.
-            </h3>
-            <div class="price_product">
-                <h2>
-                ₹299
-                </h2>
-                <button>
-                    Buy now
-                </button>
-            </div>
-
-        </div>
-    </div>
-    <div class="product_swiper_page">
-        <div class="product_swiper_page_img">
-            <img src="./assets/img/products/Air Freshener.webp" alt="">
-        </div>
-        <div class="product_swiper_page_con">
-            <h2 class="product_main_head">
-            Car Air Freshener
-            </h2>
-            <h3 class="product_sec_head">
-            Natural, long-lasting car freshener with soothing aroma.
-            </h3>
-            <div class="price_product">
-                <h2>
-                ₹299
-                </h2>
-                <button>
-                    Buy now
-                </button>
-            </div>
-
-        </div>
-    </div>
-    <div class="product_swiper_page">
-        <div class="product_swiper_page_img">
-            <img src="./assets/img/products/Air Freshener.webp" alt="">
-        </div>
-        <div class="product_swiper_page_con">
-            <h2 class="product_main_head">
-            Car Air Freshener
-            </h2>
-            <h3 class="product_sec_head">
-            Natural, long-lasting car freshener with soothing aroma.
-            </h3>
-            <div class="price_product">
-                <h2>
-                ₹299
-                </h2>
-                <button>
-                    Buy now
-                </button>
-            </div>
-
-        </div>
-    </div>
-    <div class="product_swiper_page">
-        <div class="product_swiper_page_img">
-            <img src="./assets/img/products/Air Freshener.webp" alt="">
-        </div>
-        <div class="product_swiper_page_con">
-            <h2 class="product_main_head">
-            Car Air Freshener
-            </h2>
-            <h3 class="product_sec_head">
-            Natural, long-lasting car freshener with soothing aroma.
-            </h3>
-            <div class="price_product">
-                <h2>
-                ₹299
-                </h2>
-                <button>
-                    Buy now
-                </button>
-            </div>
-
-        </div>
-    </div>
+    <?php endforeach; ?>
   </div>
     </div>
 </div>
