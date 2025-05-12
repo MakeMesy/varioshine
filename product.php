@@ -59,41 +59,9 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
         <h2 class="text-2xl uppercase ">
           About Item
         </h2>
-        <ul class="mt-5">
-    <li>
-      <strong>Crystal-Clear Shine, No Streaks:</strong>
-      <p>
-      Advanced formula removes dirt, grease, smudges, and fingerprints without leaving streaks or residue.
-      </p>
-    </li>
-    <li>
-      <strong>Quick-Drying & Smudge-Free:</strong>
-      <p>
-      Leaves surfaces spotless in seconds – no more waiting or wiping down excess moisture.
-
-      </p>
-    </li>
-    <li>
-      <strong>Multi-Surface Compatibility:</strong>
-      <p>
-      Cleans windows, mirrors, windshields, screens, glass tabletops, cabinets, and more.
-
-      </p>
-    </li>
-    <li>
-      <strong>Safe & Eco-Friendly:</strong>
-      <p>
-      Free from harsh chemicals like ammonia and chlorine – safe for indoor use and the planet.
-      </p>
-    </li>
-    <li>
-      <strong>Long-Lasting Clean:</strong>
-      <p>
-      Helps prevent dust buildup, keeping surfaces sparkling for longer with minimal effort.
-
-      </p>
-    </li>
-  </ul>
+        <p class="mt-5 text-justify">
+          Keep your glass surfaces crystal clear with Varioshine Glass Cleaner Spray – your go-to solution for streak-free, fast-drying shine. Formulated to tackle tough grease, fingerprints, and smudges, this powerful yet gentle cleaner works wonders on windows, mirrors, windshields, tabletops, screens, and more. It dries quickly without leaving water spots or residue and even helps repel dust to keep your surfaces cleaner for longer. Perfect for homes, offices, and cars, Varioshine’s ammonia-free and chlorine-free formula is safe for indoor use and the environment. Say goodbye to hazy glass and hello to a sparkling, spotless finish every time.
+        </p>
         </div>
     </div>
 </div>

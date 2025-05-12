@@ -3,6 +3,14 @@ $page_title = "VarioShine";
 $page_description = "";
 $page_url = "https://www.varioshine.in/";
 $Icon_Image = "./assets/img/main/main_icon.webp";
+
+include("./resource/conn.php"); 
+
+function safe_htmlspecialchars($value)
+{
+    return htmlspecialchars($value !== null ? $value : '-', ENT_QUOTES, 'UTF-8');
+}
+
 ?>
 
 
@@ -24,27 +32,28 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
     <!-- hero section -->
     <section class="hero_sectio_main">
         <swiper-container class="mySwiper heroSwiper" navigation="true" loop="true" pagination="true">
-            <swiper-slide class="slide_1 hero_slider" style="background: url('./assets/img/home/slider_4.webp') no-repeat center/cover;">
+    <?php include("./backend/homeslider.php"); ?>
+<?php foreach($hero_sections as $hero_section):?>
+            <swiper-slide class="slide_1 hero_slider" style="background: url('./assets/img/home/<?= safe_htmlspecialchars($hero_section['img']); ?>') no-repeat center/cover;">
                 <div class=" hero_slider_main ">
-                    <div class="slider_content ">
+                    <div class="hero_slider_content ">
                         <h2 class="">
-                            Shine Beyond Limits with Varioshine
+                           <?= safe_htmlspecialchars($hero_section['heading']); ?>
                         </h2>
                         <p class="">
-                            Experience premium car and bike care with high-performance cleaning, polishing, and protection – trusted by detailers and loved by owners.
+                             <?= safe_htmlspecialchars($hero_section['slogan']); ?>
                         </p>
-                        <a href="./products.php" class="">
+                        <a href="<?= safe_htmlspecialchars($hero_section['link']); ?>" class="">
                             <button>
                                 <span>
-                                    SHOP NOW
+                                     <?= safe_htmlspecialchars($hero_section['btn']); ?>
                                 </span>
                             </button>
                         </a>
                     </div>
                 </div>
             </swiper-slide>
-            <swiper-slide class="hero_slider">Slide 2</swiper-slide>
-            <swiper-slide class="hero_slider">Slide 3</swiper-slide>
+      <?php endforeach; ?>
 
         </swiper-container>
     </section>
