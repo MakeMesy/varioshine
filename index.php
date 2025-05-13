@@ -67,60 +67,29 @@ function safe_htmlspecialchars($value)
             </h2>
         </div>
         <div class="featured_products">
+            <?php include('./backend/featured_products.php') ?>
+              <?php foreach ($featured_products as $featured_product): ?>
             <div class="featured_product">
                 <div class="featured_product_img flex justify-center">
-                    <img src="./assets/img/products/3-in-1 Car Polish.webp" alt="">
+                    <img src="./assets/img/products/<?= safe_htmlspecialchars($featured_product['image']) ?>" alt="">
                 </div>
                 <div class="featured_product_con">
                     <h2>
-                        3-in-1 Car Polish
+                        <?= safe_htmlspecialchars($featured_product['name']) ?>
                     </h2>
-                    <div class="flex justify-between  px-5w-full">
+                    <div class="flex justify-between items-center  px-5w-full">
                         <h2>
-                            ₹ 299
+                            ₹ <?= safe_htmlspecialchars($featured_product['price']) ?>
                         </h2>
-                        <button>
+                      <a href="<?= safe_htmlspecialchars($featured_product['link']) ?>">
+                          <button>
                             View
                         </button>
+                      </a>
                     </div>
                 </div>
             </div>
-            <div class="featured_product">
-                <div class="featured_product_img flex justify-center">
-                    <img src="./assets/img/products/3-in-1 Car Polish.webp" alt="">
-                </div>
-                <div class="featured_product_con">
-                    <h2>
-                        3-in-1 Car Polish
-                    </h2>
-                    <div class="flex justify-between  px-5">
-                        <h2>
-                            ₹ 299
-                        </h2>
-                        <button>
-                            View
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="featured_product">
-                <div class="featured_product_img flex justify-center">
-                    <img src="./assets/img/products/3-in-1 Car Polish.webp" alt="">
-                </div>
-                <div class="featured_product_con ">
-                    <h2>
-                        3-in-1 Car Polish
-                    </h2>
-                    <div class="flex justify-between  px-5">
-                        <h2>
-                            ₹ 299
-                        </h2>
-                        <button>
-                            View
-                        </button>
-                    </div>
-                </div>
-            </div>
+              <?php endforeach; ?>
         </div>
     </section>
 

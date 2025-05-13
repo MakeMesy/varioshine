@@ -131,7 +131,8 @@
 }
 
 .featured_product_img img {
-    width: 280px;
+    width: 100px;
+    object-fit: contain;
 }
 
 .featured_product_img {
@@ -228,7 +229,7 @@
 }
 
 
-/* products */
+
 
 
 /* feedback */

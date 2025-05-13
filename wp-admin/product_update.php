@@ -36,7 +36,7 @@
             header("Location: ./"); 
             exit;
         } else {
-            echo "Update failed: " . $stmt->error;
+            echo "<script>alert('Update failed: ')</script>" . $stmt->error;
         }
 
         $stmt->close();

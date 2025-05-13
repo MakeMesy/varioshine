@@ -1,76 +1,102 @@
 <?php
 include("../resource/conn.php");
-
+// fetch settings
 $settings = [];
 $result = mysqli_query($conn, "SELECT * FROM `settings` LIMIT 1");
 if ($result && mysqli_num_rows($result) > 0) {
-    $settings = mysqli_fetch_assoc($result);
+  $settings = mysqli_fetch_assoc($result);
 }
-
- $product_query = "SELECT id,short_name, image FROM products";
+// fetch the products
+$product_query = "SELECT id,short_name, image FROM products";
 $stmt = $conn->prepare($product_query);
 $stmt->execute();
-
-$stmt->bind_result($id,$short_name, $image);
-
+$stmt->bind_result($id, $short_name, $image);
 $products = [];
 while ($stmt->fetch()) {
   $products[] = [
-    'id'=>$id,
+    'id' => $id,
     'short_name' => $short_name,
     'image' => $image,
   ];
 }
+// featured products
+$featured_product_query = "SELECT id,name, image,price,link FROM fea_products";
+$stmt = $conn->prepare($featured_product_query);
+$stmt->execute();
+$stmt->bind_result($id, $name, $image, $price, $link);
+$featured_products = [];
+while ($stmt->fetch()) {
+  $featured_products[] = [
+    'id' => $id,
+    'name' => $name,
+    'image' => $image,
+    'price' => $price,
+    'link' => $link
+  ];
+}
+
 
 
 $stmt->close();
 
-
+// safe render
 function safe_htmlspecialchars($value)
 {
-    return htmlspecialchars($value !== null ? $value : '-', ENT_QUOTES, 'UTF-8');
+  return htmlspecialchars($value !== null ? $value : '-', ENT_QUOTES, 'UTF-8');
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['settings'])) {
-       include("./settings.php");
-    }
-    else if(isset($_POST['product_add'])&&$_POST['product_add']==="product_add"){
-             $short_name = $_POST['product_name'] ?? '';
+  if (isset($_POST['settings'])) {
+    // settings update
+    include("./settings.php");
 
-$conn->set_charset("utf8mb4");
-$stmt = $conn->prepare("INSERT INTO products (short_name) VALUES (?)");
-$stmt->bind_param("s", $short_name);
+    // products add
+  } else if (isset($_POST['product_add']) && $_POST['product_add'] === "product_add") {
+    $short_name = $_POST['product_name'] ?? '';
+    $conn->set_charset("utf8mb4");
+    $stmt = $conn->prepare("INSERT INTO products (short_name) VALUES (?)");
+    $stmt->bind_param("s", $short_name);
 
-if ($stmt->execute()) {
-    echo "<script>alert('Product added successfully'); window.location.href='./';</script>";
-} else {
-    echo "<script>alert('Failed to add product');</script>";
-}
-$stmt->close();        
+    if ($stmt->execute()) {
+      echo "<script>alert('Product added successfully'); window.location.href='./';</script>";
+    } else {
+      echo "<script>alert('Failed to add product');</script>";
     }
-      else if(isset($_POST['delete_product'])&&$_POST['delete_product']==="delete_product"){
-             $product_id = $_POST['product_id'] ?? '';
+    $stmt->close();
+    // delete products
+  } else if (isset($_POST['delete_product']) && $_POST['delete_product'] === "delete_product") {
+    $product_id = $_POST['product_id'] ?? '';
 
     $conn->set_charset("utf8mb4");
     $stmt = $conn->prepare("DELETE FROM products WHERE id = ?");
     $stmt->bind_param("i", $product_id);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Product deleted successfully'); window.location.href='./';</script>";
+      echo "<script>alert('Product deleted successfully'); window.location.href='./';</script>";
     } else {
-        echo "<script>alert('Failed to delete product');</script>";
+      echo "<script>alert('Failed to delete product');</script>";
     }
 
-    $stmt->close();   
-    };
-
-}
+    $stmt->close();
+    
+  } 
+  // featured Product content
+  else if (isset($_POST['fea_product']) && $_POST['fea_product'] === "fea_product") {
+    include("./featured_product_content.php");
+   
+  }
+  // featured product img
+  else if (isset($_POST['fea_img']) && $_POST['fea_img'] === "fea_img"){
+    include("./featured_product_img.php");
+    
+      } 
+  }
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,80 +108,78 @@ $stmt->close();
 </head>
 
 <body>
+  <!-- navbar -->
+  <?php include("./nav.php") ?>
 
-<?php include("./nav.php") ?>
-  
 
   <!-- settings -->
-   <?php include("./settings_html.php") ?>
+  <?php include("./settings_html.php") ?>
 
-   <!-- products -->
-
-     
-<section class="products_main" id="products_main">
+  <!-- products -->
+  <section class="products_main" id="products_main">
     <div class="text-3xl uppercase section-title mt-20 text-center flex justify-center items-center gap-5">
-         <h2>
+      <h2>
         Products
       </h2>
-        <button class="add_btn">
+      <button class="add_btn">
         Add
       </button>
-       </div>
+    </div>
     <section class="products-container">
- <?php foreach ($products as $product): ?>
- <a href="./product.php?id=<?= safe_htmlspecialchars($product['id']) ?>">
-   <div class="product-card" >
-          <img src="../assets/img/products/<?= safe_htmlspecialchars($product['image']) ?>" alt="">
-
-    <h3><?= safe_htmlspecialchars($product['short_name']) ?></h3>
-   <form action="./index.php" method="post" onsubmit="return confirm('Are you sure you want to delete this product?')">
-    <input type="hidden" name="delete_product" value="delete_product">
-<input type="hidden" name='product_id' value="<?= safe_htmlspecialchars($product['id']) ?>">
-     <button class="delete_icon" >
-      <i class="fa fa-trash" aria-hidden="true"></i>
-    </button>
-   </form>
-  </div>
- </a>
-<?php endforeach; ?>
-
-
-</section>
-</section>
-
-<div class="add_products">
-  <form action="./index.php" method="post">
-    <input type="hidden" name="product_add" value="product_add">
-  <input type="text" name="product_name" placeholder="Product Short Name" required>
+      <?php foreach ($products as $product): ?>
+        <?php include('./home_products.php') ?>
+      <?php endforeach; ?>
+    </section>
+  </section>
+  <!-- add products -->
+  <div class="add_products">
+    <form action="./index.php" method="post">
+      <input type="hidden" name="product_add" value="product_add">
+      <input type="text" name="product_name" placeholder="Product Short Name" required>
       <div>
-                <button type="submit" class="update-btn">
-                    <i class="fa-solid fa-rotate"></i> Update
-                </button>
-            </div>
-            <div class="close_btn">
+        <button type="submit" class="update-btn">
+          <i class="fa-solid fa-rotate"></i> Add
+        </button>
+      </div>
+      <div class="close_btn">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </div>
+    </form>
+  </div>
 
-                <i class="fa fa-times" aria-hidden="true"></i>
+  <!-- featured products -->
+  <section id="featured_products " class="mt-20">
+    <div class="section_head_text text-4xl uppercase text-center" data-aos="fade-down">
+      <h2 class="section-title uppercase">
+        featured products
+      </h2>
+    </div>
+    <div class="featured_products">
+      <?php foreach ($featured_products as $featured_product): ?>
+        <?php include('./featured_product_html.php') ?>
+       
+      <?php endforeach; ?>
+    </div>
+  </section>
 
-            </div>
-</form>
-</div>
 
 
   <!-- js -->
   <script src="https://kit.fontawesome.com/181ea7bd20.js" crossorigin="anonymous"></script>
 
-  
-<script>
-  let add_btn=document.querySelector('.add_btn');
-  let add_products=document.querySelector('.add_products');
-  let close_btn=document.querySelector('.close_btn');
-  add_btn.addEventListener('click',()=>{
-     add_products.classList.add('active')
-  })
-  close_btn.addEventListener('click',()=>{
-     add_products.classList.remove('active')
 
-  })
-</script>
+  <script>
+    let add_btn = document.querySelector('.add_btn');
+    let add_products = document.querySelector('.add_products');
+    let close_btn = document.querySelector('.close_btn');
+    add_btn.addEventListener('click', () => {
+      add_products.classList.add('active')
+    })
+    close_btn.addEventListener('click', () => {
+      add_products.classList.remove('active')
+
+    })
+  </script>
 </body>
+
 </html>
