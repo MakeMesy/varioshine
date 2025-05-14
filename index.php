@@ -11,6 +11,22 @@ function safe_htmlspecialchars($value)
     return htmlspecialchars($value !== null ? $value : '-', ENT_QUOTES, 'UTF-8');
 }
 
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $name = $_POST['name'];
+    $product_review_name = $_POST['product_review_name'];
+    $rating = $_POST['rating'];
+    $comments = $_POST['comments'];
+
+    $stmt = $conn->prepare("INSERT INTO reviews (name, product_name	, rating, comments) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $name, $product_review_name, $rating, $comments);
+    if ($stmt->execute()) {
+        echo "<script>alert('Thank you for your feedback!');window.location.href='./';</script>";
+    } else {
+        echo "<script>alert('Failed to submit');window.location.href='./';</script>";
+
+    }
+}
+
 ?>
 
 
@@ -156,76 +172,35 @@ function safe_htmlspecialchars($value)
 
                 <swiper-container class="mySwiper feedback_swiper" space-between="20"
                     slides-per-view="3">
+<?php
+include('./backend/feedback.php') ;
+?>
+                      <?php foreach ($reviews as $review): ?>
                     <swiper-slide class="feedback_container" style="width: 70%;">
                         <div class="feedback_person_name">
                             <h2>
-                                B.Naveen Bharathi
+                                <?= htmlspecialchars($review['name']) ?>
                             </h2>
                         </div>
                         <div class="feedback_product_name">
                             <p>
-                                3 in 1 polish
+                                 <?= htmlspecialchars($review['product_name']) ?>
                             </p>
                         </div>
                         <div class="feedback_content">
                             <p>
-                                Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur
+                                 <?= htmlspecialchars($review['comments']) ?>
                             </p>
                         </div>
-                    </swiper-slide>
-                    <swiper-slide class="feedback_container">
-                        <div class="feedback_person_name">
-                            <h2>
-                                B.Naveen Bharathi
-                            </h2>
-                        </div>
-                        <div class="feedback_product_name">
-                            <p>
-                                3 in 1 polish
-                            </p>
-                        </div>
-                        <div class="feedback_content">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur
-                            </p>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide class="feedback_container">
-                        <div class="feedback_person_name">
-                            <h2>
-                                B.Naveen Bharathi
-                            </h2>
-                        </div>
-                        <div class="feedback_product_name">
-                            <p>
-                                3 in 1 polish
-                            </p>
-                        </div>
-                        <div class="feedback_content">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur
-                            </p>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide class="feedback_container">
-                        <div class="feedback_person_name">
-                            <h2>
-                                B.Naveen Bharathi
-                            </h2>
-                        </div>
-                        <div class="feedback_product_name">
-                            <p>
-                                3 in 1 polish
-                            </p>
-                        </div>
-                        <div class="feedback_content">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur
-                            </p>
+                        <div class="rating_feedback text-center mt-2">
+                            <?php $rating=$review['rating'] ; for($i=0;$i<$rating;$i++): ?>
+                           
+<i class="fa-solid fa-star"></i>
+                                <?php endfor; ?>
                         </div>
                     </swiper-slide>
 
-
+                    <?php endforeach; ?>
                 </swiper-container>
 
             </div>
@@ -233,13 +208,65 @@ function safe_htmlspecialchars($value)
                 <div class="feedback_icon">
                     <i class="fa-solid fa-comments"></i>
                 </div>
-                <button>
+                <button class="feedback_open_btn">
                     Give Feedback
                 </button>
             </div>
         </div>
     </section>
+<?php
+$product_query = "SELECT id,short_name FROM products";
+$stmt = $conn->prepare($product_query);
+$stmt->execute();
+$stmt->bind_result($id, $short_name);
+$products = [];
+while ($stmt->fetch()) {
+  $products[] = [
+    'id' => $id,
+    'short_name' => $short_name,
 
+  ];
+}
+
+?>
+   
+   <div class="main_feedback_form">
+<div class="feedback_form">
+    <form action="./index.php" method="POST">
+        <!-- Name -->
+        <label for="name">Your Name:</label>
+        <input type="text" name="name" id="name" required>
+
+        <!-- Product Selection -->
+        <label for="product">Select Product:</label>
+        <select name="product_review_name" id="product" required>
+            <option value="">-- Choose Product --</option>
+            <?php foreach ($products as $product): ?>
+                <option value="<?= $product['short_name']?>"><?= htmlspecialchars($product['short_name']) ?></option>
+            <?php endforeach; ?>
+        </select>
+
+        <!-- Rating -->
+        <label for="rating">Rating (1-5):</label>
+        <select name="rating" id="rating" required>
+            <option value="">-- Rate --</option>
+            <?php for ($i = 1; $i <= 5; $i++): ?>
+                <option value="<?= $i ?>"><?= $i ?></option>
+            <?php endfor; ?>
+        </select>
+
+        <!-- Comments -->
+        <label for="comments">Your Feedback:</label>
+        <textarea name="comments" id="comments" rows="4" required></textarea>
+
+        <!-- Submit -->
+        <button type="submit">Submit Feedback</button>
+        <div class="close_btn">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+    </form>
+</div>
+</div>
 <div class="instagram_feed">
     <iframe src="https://www.juicer.io/api/feeds/varioshine/iframe" 
         frameborder="0" 
@@ -270,6 +297,22 @@ function safe_htmlspecialchars($value)
     }
   });
   swiperEl.initialize();
+
+
+  document.addEventListener('DOMContentLoaded',()=>{
+    let close_btn=document.querySelector('.close_btn')
+   let feedback_open_btn=document.querySelector('.feedback_open_btn')
+   let main_feedback_form=document.querySelector('.main_feedback_form')
+    
+   feedback_open_btn.addEventListener('click',()=>{
+main_feedback_form.classList.add('active')
+   })
+   close_btn.addEventListener('click',()=>{
+main_feedback_form.classList.remove('active')
+
+   })
+
+  })
 </script>
 </body>
 

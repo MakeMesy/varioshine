@@ -110,6 +110,7 @@ function safe_htmlspecialchars($value)
           <textarea name="full_name" rows="10" placeholder="long_name"><?= safe_htmlspecialchars($product['full_name']) ?></textarea>
 
           <input type="text" name="short_name" value="<?= safe_htmlspecialchars($product['short_name']) ?>" placeholder="short_name">
+          <input type="text" name="url_name" value="<?= safe_htmlspecialchars($product['url_name']) ?>" placeholder="url_name">
 
           <input type="text" name="offer_price" value="<?= safe_htmlspecialchars($product['offer_price']) ?>" placeholder="offer_price">
 

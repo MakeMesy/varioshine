@@ -28,9 +28,11 @@
                 </div>
             
                 <div class="offer_deal_btn"  data-aos="zoom-in-down">
-                    <button>
+                <a href="./products.php">
+                        <button>
                     Grab the Deal
                     </button>
+                </a>
                 </div>
                 <div class="bottom_banner_text"  data-aos="zoom-in-up">
                     <h2>

@@ -421,9 +421,14 @@ swiper-container::part(button-prev):hover {
     color: var(--text-color);
     border-radius: 3px;
     text-transform: uppercase;
+    transition: 0.4s;
+    cursor: pointer;
 
 }
-
+.price_product button:hover{
+    transform: scale(1.02);
+    background: var(--primary-color);
+}
 .price_product h2 {
     font-size: clamp(22px, 2vw, 25px);
 }

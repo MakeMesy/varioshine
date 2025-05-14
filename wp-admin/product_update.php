@@ -3,6 +3,7 @@
 
     $full_name     = $_POST['full_name'] ?? '';
     $short_name    = $_POST['short_name'] ?? '';
+    $url_name    = $_POST['url_name'] ?? '';
     $offer_price   = $_POST['offer_price'] ?? '';
     $mrp           = $_POST['mrp'] ?? '';
     $amazon_link   = $_POST['amazon_link'] ?? '';
@@ -15,15 +16,17 @@
         $stmt = $conn->prepare("UPDATE products SET 
             full_name = ?, 
             short_name = ?, 
-            offer_price = ?, 
+            url_name = ?, 
+            offer_price = ?,
             mrp = ?, 
             amazon_link = ?, 
             description = ?
             WHERE id = ?");
 
-        $stmt->bind_param("ssssssi", 
+        $stmt->bind_param("sssssssi", 
             $full_name, 
             $short_name, 
+              $url_name,
             $offer_price, 
             $mrp, 
             $amazon_link, 

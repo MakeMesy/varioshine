@@ -5,24 +5,7 @@ $page_url = "https://www.varioshine.in/";
 $Icon_Image = "./assets/img/main/main_icon.webp";
 
 include('./resource/conn.php');
-
-$product_query = "SELECT id,short_name,sec_head,image,offer_price,amazon_link FROM products";
-$stmt = $conn->prepare($product_query);
-$stmt->execute();
-
-$stmt->bind_result($id,$short_name,$sec_head,$image,$offer_price,$amazon_link);
-
-$products = [];
-while ($stmt->fetch()) {
-  $products[] = [
-    'id'=>$id,
-    'short_name' => $short_name,
-    'image' => $image,
-    'sec_head'=>$sec_head,
-    'offer_price'=>$offer_price,
-    'amazon_link'=>$amazon_link
-  ];
-}
+include('./backend/products.php');
 
 
 $stmt->close();
@@ -82,7 +65,7 @@ function safe_htmlspecialchars($value)
                 <h2>
                 ₹<?= safe_htmlspecialchars($product['offer_price']) ?>
                 </h2>
-                <a href="<?= safe_htmlspecialchars($product['amazon_link']) ?>">
+                <a href="./product.php?name=<?= safe_htmlspecialchars($product['url_name']) ?>">
                   <button>
                     Buy now
                 </button>

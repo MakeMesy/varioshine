@@ -54,9 +54,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   } else if (isset($_POST['product_add']) && $_POST['product_add'] === "product_add") {
     $short_name = $_POST['product_name'] ?? '';
     $conn->set_charset("utf8mb4");
-    $stmt = $conn->prepare("INSERT INTO products (short_name) VALUES (?)");
+    $stmt = $conn->prepare("INSERT INTO products (short_name,url_name) VALUES (?)");
     $stmt->bind_param("s", $short_name);
-
     if ($stmt->execute()) {
       echo "<script>alert('Product added successfully'); window.location.href='./';</script>";
     } else {
@@ -70,6 +69,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn->set_charset("utf8mb4");
     $stmt = $conn->prepare("DELETE FROM products WHERE id = ?");
     $stmt->bind_param("i", $product_id);
+
+    if ($stmt->execute()) {
+      echo "<script>alert('Product deleted successfully'); window.location.href='./';</script>";
+    } else {
+      echo "<script>alert('Failed to delete product');</script>";
+    }
+
+    $stmt->close();
+    
+  } 
+  // review delete
+  else if (isset($_POST['review_remove']) && $_POST['review_remove'] === "review_remove") {
+    $review_id = $_POST['review_id'] ?? '';
+
+    $conn->set_charset("utf8mb4");
+    $stmt = $conn->prepare("DELETE FROM reviews WHERE id = ?");
+    $stmt->bind_param("i", $review_id);
 
     if ($stmt->execute()) {
       echo "<script>alert('Product deleted successfully'); window.location.href='./';</script>";
@@ -148,7 +164,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </div>
 
   <!-- featured products -->
-  <section id="featured_products " class="mt-20">
+  <section id="featured_products " class="mt-20 mb-30">
     <div class="section_head_text text-4xl uppercase text-center" data-aos="fade-down">
       <h2 class="section-title uppercase">
         featured products
@@ -162,8 +178,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
   </section>
 
+<!-- feedback -->
+ <?php
+include('../backend/feedback.php') ;
+?>
+ 
+  <div class="feedback_main ">
+    <?php foreach ($reviews as $review): ?>
+                    <div class="feedback_container">
+                        <div class="feedback_person_name">
+                            <h2>
+                                <?= htmlspecialchars($review['name']) ?>
+                            </h2>
+                        </div>
+                        <div class="feedback_product_name">
+                            <p>
+                                 <?= htmlspecialchars($review['product_name']) ?>
+                            </p>
+                        </div>
+                        <div class="feedback_content">
+                            <p>
+                                 <?= htmlspecialchars($review['comments']) ?>
+                            </p>
+                        </div>
+                        <div class="rating_feedback text-center mt-2">
+                            <?php $rating=$review['rating'] ; for($i=0;$i<$rating;$i++): ?>
+                           
+<i class="fa-solid fa-star"></i>
+                                <?php endfor; ?>
+                        </div>
+                       <form action="./index.php" method="post" onsubmit="return confirm('are you delete the user review ');">
+                         <input type="hidden" name="review_remove" value="review_remove">
+                         <input type="hidden" name="review_id" value="<?= htmlspecialchars($review['id']) ?>">
+                          <button class="delete_icon" type="submit">
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    </button>
+                       </form>
+                    </div>
 
-
+                    <?php endforeach; ?>
+</div>
   <!-- js -->
   <script src="https://kit.fontawesome.com/181ea7bd20.js" crossorigin="anonymous"></script>
 
