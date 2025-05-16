@@ -40,6 +40,15 @@
 </script>
 <link rel="shortcut icon" href="<?php echo $Icon_Image; ?>" type="image/x-icon">
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LW6Z22BMHK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LW6Z22BMHK');
+</script>
 
 <!-- tailwind -->
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -49,5 +58,5 @@
 <script src="https://kit.fontawesome.com/181ea7bd20.js" crossorigin="anonymous"></script>
 
 <!-- aos animation -->
-   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
    
