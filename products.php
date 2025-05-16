@@ -1,7 +1,7 @@
 <?php
 $page_title = "Products | Varioshine";
-$page_description = "";
-$page_url = "https://www.varioshine.in/";
+$page_description = "Varioshine offers premium car and bike care products including glass cleaner, 3-in-1 car polish, tyre polish, wash shampoo, and air fresheners. Trusted quality, made in India.";
+$page_url = "https://www.varioshine.in/products.php";
 $Icon_Image = "./assets/img/main/main_icon.webp";
 
 include('./resource/conn.php');
@@ -9,10 +9,7 @@ include('./backend/products.php');
 
 
 $stmt->close();
-function safe_htmlspecialchars($value)
-{
-    return htmlspecialchars($value !== null ? $value : '-', ENT_QUOTES, 'UTF-8');
-}
+
 ?>
 
 

@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /resource/
+Disallow: /backend/
+Disallow: /assets/
+Disallow: /main.php
+Allow: /
+
+Sitemap: https://www.varioshine.in/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

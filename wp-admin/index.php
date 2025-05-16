@@ -1,5 +1,12 @@
 <?php
 include("../resource/conn.php");
+
+session_start();
+
+if (!isset($_SESSION['username'])) {
+  header("Location: ./login.php");
+  exit();
+}
 // fetch settings
 $settings = [];
 $result = mysqli_query($conn, "SELECT * FROM `settings` LIMIT 1");
@@ -62,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       echo "<script>alert('Failed to add product');</script>";
     }
     $stmt->close();
+
     // delete products
   } else if (isset($_POST['delete_product']) && $_POST['delete_product'] === "delete_product") {
     $product_id = $_POST['product_id'] ?? '';
@@ -173,7 +181,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="featured_products">
       <?php foreach ($featured_products as $featured_product): ?>
         <?php include('./featured_product_html.php') ?>
-       
       <?php endforeach; ?>
     </div>
   </section>
@@ -217,6 +224,47 @@ include('../backend/feedback.php') ;
                     </div>
 
                     <?php endforeach; ?>
+</div>
+
+
+<!-- contacts -->
+ <?php
+ $contact_sql = "SELECT * FROM contacts ORDER BY submitted_at DESC";
+$contact_form = $conn->query($contact_sql);?>
+<h2 class="section-title mt-20 uppercase">
+  Enquiries
+</h2>
+<div class="overflow-x-scroll px-10">
+<?php if ($contact_form->num_rows > 0): ?>
+    <table class="mt-10 ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Subject</th>
+                <th>Message</th>
+                <th>Submitted At</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php while($row = $contact_form->fetch_assoc()): ?>
+                <tr>
+                    <td><?= htmlspecialchars($row["id"]) ?></td>
+                    <td><?= htmlspecialchars($row["full_name"]) ?></td>
+                    <td><?= htmlspecialchars($row["email"]) ?></td>
+                    <td><?= htmlspecialchars($row["phone"]) ?></td>
+                    <td><?= htmlspecialchars($row["subject"]) ?></td>
+                    <td><?= nl2br(htmlspecialchars($row["message"])) ?></td>
+                    <td><?= $row["submitted_at"] ?></td>
+                </tr>
+            <?php endwhile; ?>
+        </tbody>
+    </table>
+<?php else: ?>
+    <p>No messages found.</p>
+<?php endif; ?>
 </div>
   <!-- js -->
   <script src="https://kit.fontawesome.com/181ea7bd20.js" crossorigin="anonymous"></script>

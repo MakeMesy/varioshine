@@ -1,7 +1,9 @@
 <?php
-$page_title = "VarioShine";
-$page_description = "";
-$page_url = "https://www.varioshine.in/";
+include('./resource/conn.php');
+
+$page_title = "About | VarioShine";
+$page_description = "Varioshine offers premium car and bike care products including glass cleaner, 3-in-1 car polish, tyre polish, wash shampoo, and air fresheners. Trusted quality, made in India.";
+$page_url = "https://www.varioshine.in/about.php";
 $Icon_Image = "./assets/img/main/main_icon.webp";
 ?>
 

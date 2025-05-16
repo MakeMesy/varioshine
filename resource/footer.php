@@ -6,7 +6,7 @@
                     <i class="fa-solid fa-envelope"></i>
                 </div>
                 <div class="footer_item_con">
-                    <a href="">contact@varioshine.in</a>
+                    <a href=""><?= safe_htmlspecialchars($settings['email']) ?></a>
                 </div>
             </div>
             <div class="footer_item" >
@@ -14,7 +14,7 @@
                 <i class="fa-solid fa-phone"></i>
                 </div>
                 <div class="footer_item_con">
-                    <a href="">+91 97900 00808</a>
+                    <a href=""><?= safe_htmlspecialchars($settings['phone']) ?></a>
                 </div>
             </div>
             <div class="footer_item">
@@ -22,7 +22,7 @@
                 <i class="fa-solid fa-location-dot"></i>
                 </div>
                 <div class="footer_item_con">
-                5/3, S.V.K Street Pettai , <br> Tirunelveli  - 627004
+                <?= safe_htmlspecialchars($settings['address']) ?>
                 </div>
             </div>
         </div>
@@ -36,13 +36,13 @@
                 </p>
             </div>
             <div class="footer_social_media flex justify-center gap-5 text-2xl">
-               <a href="" >
+               <a href="<?= safe_htmlspecialchars($settings['instagram']) ?>" >
                <div class="social_icon">
                 <i class="fa-brands fa-instagram"></i>
                 </div>
                </a>
               
-               <a href="">
+               <a href="<?= safe_htmlspecialchars($settings['facebook']) ?>">
                <div class="social_icon">
                 <i class="fa-brands fa-facebook"></i>
                 </div>
@@ -58,28 +58,28 @@
                 <div class="flex gap-4 text-xl">
                 <ul>
                 <li>
-                    <a href="">
+                    <a href="./">
                         Home
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="./about.php">
                         About
                     </a>
                 </li>
-                <li><a href="">
+                <li><a href="./products.php">
                     Products
                 </a></li>
                 </ul>
           
                 <ul>
-                <li><a href="">
+                <li><a href="./#offer_banner">
                     Offers
                 </a></li>
-                <li><a href="">
+                <li><a href="./contact.php">
                     Contact
                 </a></li>
-                <li><a href="">
+                <li><a href="./products.php">
                     Buy Now
                 </a></li>
                 </ul>
@@ -88,7 +88,7 @@
     </div>
     <div class="copy_right">
     <p >
-    &copy; 2025 <a href="https://www.varioshine.in">Varioshine.</a> All rights reserved. | Designed & Developed by 
+    &copy; 2025 <a href="./">Varioshine.</a> All rights reserved. | Designed & Developed by 
     <a href="https://makemesy.in" target="_blank" >
       Makemesy
     </a>

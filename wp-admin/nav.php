@@ -16,6 +16,11 @@
             Settings
           </li>
         </a>
+        <a href="./logout.php" >
+            <button type="submit" class="log_out_btn">
+              logout
+            </button>
+        </a>
       </ul>
     </div>
   </nav>

@@ -1,3 +1,4 @@
+
 <nav >
     <div class="main_navbar flex justify-between px-20 items-center pt-3" data-aos="fade-down">
         <div class="nav_img">
@@ -25,7 +26,20 @@
 
     </div>
 </nav>
+<?php
 
+
+$settings = [];
+$result = mysqli_query($conn, "SELECT * FROM `settings` LIMIT 1");
+if ($result && mysqli_num_rows($result) > 0) {
+  $settings = mysqli_fetch_assoc($result);
+}
+function safe_htmlspecialchars($value)
+{
+    return htmlspecialchars($value !== null ? $value : '-', ENT_QUOTES, 'UTF-8');
+}
+
+?>
 <div class="mobile_main_items">
     <ul class="">
 
@@ -41,7 +55,7 @@
                 <i class="fa-solid fa-envelope"></i>
             </div>
             <div class="navbar_bottom_con">
-                <a href="">contact@varioshine.in</a>
+                <a href=""><?= safe_htmlspecialchars($settings['email']) ?></a>
             </div>
         </div>
         <div class="navbar_bottom">
@@ -49,7 +63,7 @@
                 <i class="fa-solid fa-phone"></i>
             </div>
             <div class="navbar_bottom_con">
-                <a href="">+91 97900 00808</a>
+                <a href=""><?= safe_htmlspecialchars($settings['phone']) ?></a>
             </div>
         </div>
         <div class="navbar_bottom">
@@ -57,7 +71,7 @@
                 <i class="fa-solid fa-location-dot"></i>
             </div>
             <div class="navbar_bottom_con">
-                5/3, S.V.K Street Pettai , <br> Tirunelveli - 627004
+               <?= safe_htmlspecialchars($settings['address']) ?>
             </div>
         </div>
     </div>

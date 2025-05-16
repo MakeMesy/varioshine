@@ -1,0 +1,19 @@
+RewriteEngine On
+
+# Force www. in domain (redirect varioshine.in to www.varioshine.in)
+RewriteCond %{HTTP_HOST} ^varioshine\.in [NC]
+RewriteRule ^(.*)$ https://www.varioshine.in/$1 [L,R=301]
+
+# Exclude sitemap.xml and robots.txt from the redirect rule
+RewriteCond %{REQUEST_URI} !^/sitemap.xml$ [NC]
+RewriteCond %{REQUEST_URI} !^/robots.txt$ [NC]
+
+# Redirect non-existent pages to a custom 404 page instead of homepage
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ /404.html [L,R=301]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+</IfModule>

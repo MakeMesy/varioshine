@@ -1,15 +1,10 @@
 <?php
 $page_title = "VarioShine";
-$page_description = "";
+$page_description = "Varioshine offers premium car and bike care products including glass cleaner, 3-in-1 car polish, tyre polish, wash shampoo, and air fresheners. Trusted quality, made in India.";
 $page_url = "https://www.varioshine.in/";
 $Icon_Image = "./assets/img/main/main_icon.webp";
 
 include("./resource/conn.php"); 
-
-function safe_htmlspecialchars($value)
-{
-    return htmlspecialchars($value !== null ? $value : '-', ENT_QUOTES, 'UTF-8');
-}
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $name = $_POST['name'];
@@ -171,7 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </h2>
 
                 <swiper-container class="mySwiper feedback_swiper" space-between="20"
-                    slides-per-view="3">
+                    slides-per-view="3" loop=true>
 <?php
 include('./backend/feedback.php') ;
 ?>

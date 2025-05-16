@@ -1,8 +1,16 @@
 <?php
-$page_title = "Contact Us | VarioShine";
-$page_description = "";
-$page_url = "https://www.varioshine.in/";
+include('./resource/conn.php');
+
+$page_title = "Contact Us | Varioshine";
+$page_description = "Varioshine offers premium car and bike care products including glass cleaner, 3-in-1 car polish, tyre polish, wash shampoo, and air fresheners. Trusted quality, made in India.";
+$page_url = "https://www.varioshine.in/contact.php";
 $Icon_Image = "./assets/img/main/main_icon.webp";
+
+
+if($_SERVER['REQUEST_METHOD']=='POST'){
+  include('./backend/contact_form.php');
+}
+
 ?>
 
 
@@ -39,8 +47,8 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
       </h2>
      </div>
      <div class="contact-card-con">
-      <a href="mailto:contact@varioshine.in">
-        contact@varioshine.in
+      <a href="mailto:<?= safe_htmlspecialchars($settings['email']) ?>">
+        <?= safe_htmlspecialchars($settings['email']) ?>
       </a>
      </div>
     </div>
@@ -54,7 +62,7 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
      </div>
      <div class="contact-card-con">
       <a href="">
-      +91 97900 00808
+      <?= safe_htmlspecialchars($settings['phone']) ?>
       </a>
      </div>
     </div>
@@ -68,7 +76,7 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
      </div>
      <div class="contact-card-con text-center">
       <a href="" >
-      5/3 s.v.k Street Pettai Tirunelveli-627004
+        <?= safe_htmlspecialchars($settings['address']) ?>
       </a>
      </div>
     </div>
@@ -81,7 +89,7 @@ $Icon_Image = "./assets/img/main/main_icon.webp";
 <div id="contact-form-section">
     <div class="contact-form-section">
         <div class="contact-form-main">
-        <form action="#" method="post" class="contact-form">
+        <form action="./contact.php" method="post" class="contact-form">
     <div class="form-group-1">
         <div>
         <label for="name">Full Name</label>

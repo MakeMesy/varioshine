@@ -65,6 +65,9 @@
     text-transform: uppercase;
     color: var(--text-color);
 }
+.mobile_main_items .navbar_bottom_icon {
+    flex-basis: 15%;
+}
 .navbar_bottom_main{
     margin-top: 2rem;
     display: flex;
@@ -83,7 +86,7 @@
     display: flex;
     justify-content: center;
 align-items: center;
-width: 30px;
+max-width: 30px;
 height: 30px;
 border-radius: 3px;
 color: var(--primary-color);
@@ -386,12 +389,21 @@ swiper-container::part(button-prev):hover {
 
 .product_swiper_img {
     width: 100%;
+    max-height: 360px;
+    min-height: 360px;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid var(--dark-primary);
 }
 
+.product_swiper_img {
+    object-fit: contain;
+    height: 300px;
+    width: 300px;
+    
+}
 .product_swiper_con {
     padding: 20px;
 }

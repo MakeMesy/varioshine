@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Home Page -->
+    <url>
+        <loc>https://www.varioshine.in/</loc>
+        <lastmod>2025-02-18T00:00:00+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- About Page -->
+    <url>
+        <loc>https://www.varioshine.in/about.php</loc>
+        <lastmod>2025-02-12T03:25:52+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Services Page -->
+    <url>
+        <loc>https://www.varioshine.in/contact.php</loc>
+        <lastmod>2025-02-12T03:25:52+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Webinar Page -->
+    <url>
+        <loc>https://www.varioshine.in/products.php</loc>
+        <lastmod>2025-02-12T03:25:52+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Contact Us Page -->
+    <url>
+        <loc>https://www.varioshine.in/contact.php</loc>
+        <lastmod>2025-02-12T03:25:52+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+
+</urlset>

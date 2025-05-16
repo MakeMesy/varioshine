@@ -12,7 +12,7 @@
                 <?php foreach ($products as $product): ?>
                     <swiper-slide class="product_swiper">
                         <div class="product_swiper_img">
-                            <img src="./assets/img/products/Air Freshener.webp" alt="">
+                            <img src="./assets/img/products/<?= safe_htmlspecialchars($product['image']) ?>" alt="">
                         </div>
                         <div class="product_swiper_con">
                             <h2 class="product_main_head">

@@ -1,11 +1,19 @@
 <?php
 include("../resource/conn.php");
+
+session_start();
+
+if (!isset($_SESSION['username'])) {
+  header("Location: ./login.php");
+  exit();
+}
+
 $conn->set_charset("utf8mb4");
 $main_id = intval($_GET['id']);
 if (isset($_GET['id'])) {
   include("./product_fetch.php");
 } else {
-  echo json_encode(['error' => 'No ID provided']);
+   echo "<script>alert('No ID provided');window.location.href='./'; </script>";
 }
 
 

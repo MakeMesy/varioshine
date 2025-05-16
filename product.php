@@ -36,16 +36,13 @@ $product_query = "SELECT id, full_name, url_name, short_name, image, sub_image_1
 }
 
 
-$page_title = "VarioShine";
-$page_description = "";
-$page_url = "https://www.varioshine.in/";
+$page_title = $product['short_name'] ."| VarioShine";
+$page_description = $product['full_name'] ;
+$page_url = "https://www.varioshine.in/product.php?name=".$product['short_name'];
 $Icon_Image = "./assets/img/main/main_icon.webp";
 
 
-function safe_htmlspecialchars($value)
-{
-    return htmlspecialchars($value !== null ? $value : '-', ENT_QUOTES, 'UTF-8');
-}
+
 ?>
 
 
