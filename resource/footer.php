@@ -6,7 +6,7 @@
                     <i class="fa-solid fa-envelope"></i>
                 </div>
                 <div class="footer_item_con">
-                    <a href=""><?= safe_htmlspecialchars($settings['email']) ?></a>
+                    <a href="mailto:<?= safe_htmlspecialchars($settings['email']) ?>"><?= safe_htmlspecialchars($settings['email']) ?></a>
                 </div>
             </div>
             <div class="footer_item" >
@@ -89,7 +89,7 @@
     <div class="copy_right">
     <p >
     &copy; 2025 <a href="./">Varioshine.</a> All rights reserved. | Designed & Developed by 
-    <a href="https://makemesy.in" target="_blank" >
+    <a href="https://makemesy.com" target="_blank" >
       Makemesy
     </a>
   </p>
