@@ -33,6 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/resource/style.css">
     <link rel="stylesheet" href="./assets/css/home/style.css">
+
+    <!-- search console -->
+     <meta name="google-site-verification" content="xY2h9AU6tWPE3UE5i_NEbbWz4aWOfl8zbCVz6dr1ewo" />
 </head>
 
 <body>
