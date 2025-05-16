@@ -42,4 +42,43 @@
     </url>
 
 
+<!-- products -->
+<url>
+    <loc>https://www.varioshine.in/product.php?name=glass-cleaner-spray</loc>
+    <lastmod>2025-05-16T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://www.varioshine.in/product.php?name=3-in-1-Car-Polish</loc>
+    <lastmod>2025-05-16T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://www.varioshine.in/product.php?name=Car-and-Bike-Wash-Shampoo</loc>
+    <lastmod>2025-05-16T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://www.varioshine.in/product.php?name=Car-and-Bike-Wash-Shampoo-5L</loc>
+    <lastmod>2025-05-16T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://www.varioshine.in/product.php?name=Car-and-Bike-Wash-Shampoo-1L</loc>
+    <lastmod>2025-05-16T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://www.varioshine.in/product.php?name=Car-Air-Freshener</loc>
+    <lastmod>2025-05-16T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+</url>
+
+
 </urlset>
